@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.glow{
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 
+    0 0 5px #ff00ff,   /* Pink glow */
+    0 0 10px #00ffff,  /* Cyan glow */
+    0 0 20px #00ff00,  /* Green glow */
+    0 0 40px #ff0000,  /* Red glow */
+    0 0 60px #ffff00;  /* Yellow glow */
+}
+
+.glow2{
+  border-radius: 12px;
+  text-shadow: 
+    0 0 5px #ff00ff,   /* Pink glow */
+    0 0 10px #00ffff;
+}
+.glow2:hover {
+  box-shadow: 0 0 15px #ff007f, 
+              0 0 25px #7f00ff, 
+              0 0 35px #00e5ff, 
+              0 0 45px #00ff6a;
+  transform: scale(1.02);
+  cursor:col-resize;
+}
+
