@@ -2,8 +2,15 @@ import { useContext, useState } from "react";
 import { fetchCoinData } from "../Services/fetchCoinData";
 import { useQuery } from "@tanstack/react-query";
 import { CurrencyContext } from "../Context/ContextProvider";
+import { useNavigate } from "react-router-dom";
 
 function CoinTable2() {
+
+
+   const navigate = useNavigate();
+   const handleCoinRedirect = (id) => {
+     navigate(`/coins/${id}`);
+   };
 
     const {currency} = useContext(CurrencyContext);
     const [page, setPage] = useState(1);
@@ -26,11 +33,7 @@ function CoinTable2() {
     return <div>Error: {error.message}</div>;
   }
 
-  const handleCoinRedirect = (coinId) => {
-    window.location.href = `/coin/${coinId}`; 
-  };
 
-       
     return (
         <div className="my-5 flex flex-col items-center justify-center gap-5 w-[80vw] mx-auto">
           <div className="text-4xl text-center font-semibold">The Price of Bitcoin are given in <b className="glow2">{currency}</b></div>

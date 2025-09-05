@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Home from './Home/Home'
 import { CurrencyContext } from './Context/ContextProvider'
+import Routing from './Routing/Routing'
 
 
 export const App = () => {
@@ -10,7 +11,7 @@ export const App = () => {
   return (
     <>
     <CurrencyContext.Provider value={{currency,setCurrency}}>
-    <Home/>
+    <Routing/>
     </CurrencyContext.Provider>
     </>
   )
