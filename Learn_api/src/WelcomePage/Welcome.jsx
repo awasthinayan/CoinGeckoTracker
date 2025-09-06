@@ -48,7 +48,7 @@ import { useNavigate } from "react-router-dom";
        }}
        whileTap={{ scale: 0.95 }}
        transition={{
-        type: "spring",
+        type: "tween",
         stiffness: 300,
     damping: 15,
     duration: 0.4,
