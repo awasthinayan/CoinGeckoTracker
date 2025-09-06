@@ -8,10 +8,11 @@ function CoinTable2() {
 
 
    const navigate = useNavigate();
-   const handleCoinRedirect = (id) => {
-     navigate(`/coins/${id}`);
-   };
 
+  const handleCoinRedirect = (id) => {
+    // navigate to route under /app to match Routing.jsx
+    navigate(`/layout/coins/${id}`);
+  };
     const {currency} = useContext(CurrencyContext);
     const [page, setPage] = useState(1);
      const {

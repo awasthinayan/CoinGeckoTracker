@@ -36,7 +36,6 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-end">
-        {/* ✅ Added Home button */}
         <button onClick={gotoHome} className="btn btn-ghost">Home</button>
 
         <button className="btn btn-ghost btn-circle">
