@@ -6,6 +6,8 @@ import ErrorBoundaryComponent from '../ErrorBoundary/ErrorBoundary'
 const Home = lazy(() => import('../Home/Home'))
 const CoinDetails = lazy(() => import('../CoinDetails/CoinDetails'))
 import Welcome from '../WelcomePage/Welcome'
+import Register from '../CoinGecko_Auth/Registration_Page'
+import Login from '../CoinGecko_Auth/Login_Page'
 
 const Routing = () => {
   return (
@@ -13,7 +15,9 @@ const Routing = () => {
       <Suspense fallback={<div className="text-3xl text-red-600">⏳ Please wait...</div>}>
         <Routes>
           {/* Landing page (first page) */}
-          <Route path='/' element={<Welcome />} />
+          <Route path='/' element={<Register/>}/>
+          <Route path='/login' element={<Login/>} />
+          <Route path='/welcome' element={<Welcome />} />
 
           {/* Main app routes under /app so Welcome stays first */}
           <Route path='/layout' element={<Layout />}>
