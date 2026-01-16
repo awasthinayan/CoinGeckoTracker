@@ -56,7 +56,7 @@ const Register = () => {
       setIsSubmitting(false);
       setStep(3);
 
-      setTimeout(() => navigate("/login"), 2000);
+      setTimeout(() => navigate("/login"), 1000);
     } catch (error) {
       setIsSubmitting(false);
       alert(

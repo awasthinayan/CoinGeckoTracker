@@ -43,6 +43,7 @@ const Login = () => {
 
       // ✅ Store token
       localStorage.setItem("token", res.data.token);
+      console.log("Login successful, token stored.", res.data.token);
 
       setLoading(false);
 
@@ -55,7 +56,9 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-black px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-sky-800 to-blue-900 px-4
+
+">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -118,9 +121,9 @@ const Login = () => {
           <motion.button
             type="submit"
             disabled={loading}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.97 }}
-            className="w-full py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:shadow-lg hover:shadow-purple-500/30 transition disabled:opacity-50 hover:cursor-pointer"
+            whileHover={{ scale: 1.02, background: "blue-600" }}
+            whileTap={{ scale: 0.99, background: "purple-700" }}
+            className="w-full py-2 rounded-xl text-[17pt] font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-500 hover:shadow-lg hover:shadow-purple-500/30 transition disabled:opacity-50 hover:cursor-pointer"
           >
             {loading ? "Logging in..." : "Login"}
           </motion.button>
@@ -133,6 +136,17 @@ const Login = () => {
             className="text-purple-400 hover:underline cursor-pointer font-semibold"
           >
             Sign Up
+          </span>
+        </p>
+
+        {/* for forgot password */}
+        <p className="text-center text-white/70 mt-2">
+          Forgot Password?{" "}
+          <span
+            onClick={() => navigate("/forgot-password")}
+            className="text-purple-400 hover:underline cursor-pointer font-semibold"
+          >
+            Click Here
           </span>
         </p>
       </motion.div>

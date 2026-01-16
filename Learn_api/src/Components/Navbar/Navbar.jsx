@@ -16,6 +16,10 @@ const Navbar = () => {
     navigate("/");
   }
 
+  function gotoCompare() {
+    navigate("/layout/compare");
+  }
+
   // ✅ Collect all cached coins across pages/currencies
   function getCachedCoins() {
     const queries = queryClient.getQueriesData({ queryKey: ["coins"] });
@@ -109,6 +113,10 @@ const Navbar = () => {
       <div className="navbar-end flex items-center gap-2">
         <button onClick={gotoHome} className="btn btn-ghost">
           Home
+        </button>
+
+        <button onClick={gotoCompare} className="btn btn-ghost">
+          Compare
         </button>
 
         {/* Search with suggestions */}
